@@ -6,7 +6,13 @@
       @click="$emit('on-toggle')"
       v-if="!isEditing"
     >
-      <span>{{ description }}</span>
+      <span>
+        <span
+          class="far"
+          :class="{ 'fa-check-circle': completed, 'fa-circle': !completed }"
+        ></span>
+        {{ description }}
+      </span>
     </button>
     <form v-else class="flex-grow-1" @submit.prevent="finishEditing()">
       <input
