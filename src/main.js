@@ -1,26 +1,35 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App.vue";
-import Users from "./pages/Users.vue";
-import Home from "./pages/Home.vue";
-import DoneTodos from "./pages/DoneTodos.vue";
+import Todo from "./pages/TodoPage.vue";
+import DoneTodos from "./pages/DoneTodosPage.vue";
+import About from "./pages/About.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  { path: "/users", component: Users },
-  { path: "/", component: Home },
-  { path: "/done", component: DoneTodos }
+export const routes = [
+  {
+    path: "/",
+    component: Todo
+  },
+  {
+    path: "/done",
+    component: DoneTodos
+  },
+  {
+    path: "/about",
+    component: About
+  }
 ];
 
-const router = new VueRouter({
+export const router = new VueRouter({
   routes: routes,
   mode: "history"
 });
 
 Vue.config.productionTip = false;
 
-new Vue({
+export const app = new Vue({
   router: router,
   render: h => h(App)
 }).$mount("#app");
