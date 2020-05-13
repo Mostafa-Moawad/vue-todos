@@ -5,7 +5,7 @@ describe("testing About Page", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallowMount(About, {});
+    wrapper = shallowMount(About);
   });
 
   it("is about", () => {

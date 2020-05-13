@@ -2,6 +2,7 @@
   <li class="d-flex align-items-center list-group-item">
     <button
       class="btn border-0 flex-grow-1 text-left shadow-none"
+      id="toggle_button"
       :class="{ completed }"
       @click="$emit('on-toggle')"
       v-if="!isEditing"
@@ -33,7 +34,11 @@
     >
       <span class="fa fa-edit"></span>
     </button>
-    <button @click="$emit('on-delete')" class="btn btn-outline-danger border-0">
+    <button
+      @click="$emit('on-delete')"
+      id="delete_button"
+      class="btn btn-outline-danger border-0"
+    >
       <span class="fa fa-trash"></span>
     </button>
   </li>
