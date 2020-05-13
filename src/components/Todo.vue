@@ -9,11 +9,15 @@
       <span>
         <span
           class="far"
-          :class="{ 'fa-check-circle': completed, 'fa-circle': !completed }"
+          :class="{
+            'fa-check-circle fa-lg': completed,
+            'fa-circle fa-lg': !completed
+          }"
         ></span>
         {{ description }}
       </span>
     </button>
+
     <form v-else class="flex-grow-1" @submit.prevent="finishEditing()">
       <input
         type="text"
@@ -68,5 +72,11 @@ export default {
 <style lang="scss" scoped>
 .completed {
   text-decoration: line-through;
+}
+.far {
+  margin: 10px;
+}
+.far:hover {
+  color: blue;
 }
 </style>

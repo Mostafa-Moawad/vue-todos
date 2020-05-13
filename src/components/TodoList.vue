@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="row mb-3">
-        <create-todo @on-new-todo="addTodo($event)" />
+        <create-todo @on-new-todo="addTodo($event)" v-if="!doneOnly" />
       </div>
       <div class="row">
         <div class="col-12 col-sm-10 col-lg-6">
@@ -35,7 +35,6 @@ import Todo from "./Todo.vue";
 import CreateTodo from "./CreateTodo.vue";
 
 const localStorageService = {
- 
   save(data) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   }
@@ -77,7 +76,6 @@ export default {
       this.todos.push({
         description: newTodo,
         completed: false
-        
       });
     },
     toggleTodo(todo) {
